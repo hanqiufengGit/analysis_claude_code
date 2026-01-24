@@ -55,8 +55,8 @@ import os
 
 load_dotenv(override=True)
 
-# Initialize Anthropic client (uses ANTHROPIC_API_KEY env var)
-client = Anthropic()
+# Initialize Anthropic client (uses ANTHROPIC_API_KEY and ANTHROPIC_BASE_URL env vars)
+client = Anthropic(base_url=os.getenv("ANTHROPIC_BASE_URL"))
 MODEL = "claude-sonnet-4-5-20250929"
 
 # The ONE tool that does everything
